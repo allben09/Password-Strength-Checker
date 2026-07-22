@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Strength Checker</title>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                <i class="fas fa-shield-halved"></i>
+                Password Strength Checker
+            </h1>
+            <button id="themeToggle" class="icon-btn" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <!-- Password Input -->
+        <div class="input-section">
+            <div class="input-wrapper">
+                <input 
+                    type="password" 
+                    id="passwordInput" 
+                    placeholder="Enter your password..." 
+                    autocomplete="off"
+                />
+                <button id="toggleVisibility" class="toggle-btn">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Strength Meter -->
+        <div class="meter-section">
+            <div class="meter-container">
+                <div id="strengthBar" class="strength-bar"></div>
+            </div>
+            <div id="strengthLabel" class="strength-label">
+                Enter a password to check
+            </div>
+        </div>
+
+        <!-- Analysis Grid -->
+        <div class="analysis-section">
+            <div class="analysis-grid">
+                <div class="analysis-item">
+                    <i class="fas fa-text-length"></i>
+                    <span>Length</span>
+                    <span id="lengthCheck" class="check-status">❌</span>
+                </div>
+                <div class="analysis-item">
+                    <i class="fas fa-font"></i>
+                    <span>Uppercase</span>
+                    <span id="uppercaseCheck" class="check-status">❌</span>
+                </div>
+                <div class="analysis-item">
+                    <i class="fas fa-font"></i>
+                    <span>Lowercase</span>
+                    <span id="lowercaseCheck" class="check-status">❌</span>
+                </div>
+                <div class="analysis-item">
+                    <i class="fas fa-hashtag"></i>
+                    <span>Numbers</span>
+                    <span id="numberCheck" class="check-status">❌</span>
+                </div>
+                <div class="analysis-item">
+                    <i class="fas fa-symbols"></i>
+                    <span>Special Characters</span>
+                    <span id="specialCheck" class="check-status">❌</span>
+                </div>
+                <div class="analysis-item">
+                    <i class="fas fa-repeat"></i>
+                    <span>Repeating Patterns</span>
+                    <span id="repeatCheck" class="check-status">❌</span>
+                </div>
+                <div class="analysis-item">
+                    <i class="fas fa-list"></i>
+                    <span>Sequential Patterns</span>
+                    <span id="sequenceCheck" class="check-status">❌</span>
+                </div>
+                <div class="analysis-item">
+                    <i class="fas fa-database"></i>
+                    <span>Common Passwords</span>
+                    <span id="commonCheck" class="check-status">❌</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions-section">
+            <button id="generatePassword" class="action-btn primary">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                Generate Password
+            </button>
+            <button id="checkBreach" class="action-btn" disabled>
+                <i class="fas fa-bug"></i>
+                Check Breach
+            </button>
+            <button id="copyPassword" class="action-btn" disabled>
+                <i class="fas fa-copy"></i>
+                Copy
+            </button>
+        </div>
+
+        <!-- Generated Password -->
+        <div id="generatedDisplay" class="generated-password hidden">
+            <span id="generatedPassword"></span>
+        </div>
+
+        <!-- Feedback -->
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
